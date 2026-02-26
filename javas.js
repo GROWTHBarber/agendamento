@@ -1,78 +1,96 @@
-// 🔥 carregar dados salvos
-let agenda = JSON.parse(localStorage.getItem("agendando..")) || [];
+// ================================
+// 🔥 ELEMENTOS
+// ================================
 
-let nome = document.getElementById("nome");
-let data = document.getElementById("data");
-let hora = document.getElementById("hora");
+const nomeInput = document.getElementById("nome");
+const dataInput = document.getElementById("data");
+const horaInput = document.getElementById("hora");
+const btn = document.getElementById("agendar");
+const lista = document.getElementById("lista");
 
-let btn = document.getElementById("agendar");
-let lista = document.getElementById("lista");
 
-let podeagendar = false
+// ================================
+// 🔥 CARREGAR DADOS SALVOS
+// ================================
 
-function enviarWhats() {
+let agenda = JSON.parse(localStorage.getItem("agendando")) || [];
 
-  let nome = document.getElementById("nome").value;
-  let data = document.getElementById("data").value;
-  let hora = document.getElementById("hora").value;
-  
-   if (!nome.value || !data.value || !hora.value) {
-        window.alert("Preencha tudo!");
-        return; // para a função aqui
-    }
 
-  let mensagem =
-    `Olá, meu nome é ${nome}%0A` +
-    `Quero agendar:%0A` +
-    `Data: ${data}%0A` +
-    `Hora: ${hora}`;
+// ================================
+// 🔥 MOSTRAR NA TELA
+// ================================
 
-  let numero = "5581993982130";
+function mostrarAgenda() {
 
-  window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+  lista.innerHTML = "";
+
+  agenda.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.nome} — ${item.data} às ${item.hora}`;
+    lista.appendChild(li);
+  });
 }
 
 
+// ================================
+// 🔥 ENVIAR WHATSAPP (VERSÃO GITHUB)
+// ================================
 
+function enviarWhatsApp(nome, data, hora) {
 
-function mostraragenda() {
+  const numero = "5581993982130"; // 🔥 coloque seu número
 
-    if (!nome.value || !data.value || !hora.value) {
-        window.alert("Preencha tudo!");
-        return; // para a função aqui
-    }
+  const mensagem =
+`Olá, meu nome é ${nome}
+Quero agendar:
+Data: ${data}
+Hora: ${hora}`;
 
-    lista.innerHTML = "";
+  const url =
+    "https://api.whatsapp.com/send?phone=" +
+    numero +
+    "&text=" +
+    encodeURIComponent(mensagem);
 
-    agenda.forEach(b => {
-        const li = document.createElement("li");
-
-        li.textContent = `${b.nome} — ${b.data} às ${b.hora}`;
-
-        lista.appendChild(li);
-    });
-
+  // 🔥 NÃO É BLOQUEADO
+  window.location.assign(url);
 }
 
-// mostrar ao abrir
-mostraragenda();
+
+// ================================
+// 🔥 CLIQUE NO BOTÃO
+// ================================
 
 btn.addEventListener("click", () => {
 
-    const novo = {
-        nome: nome.value,
-        data: data.value,
-        hora: hora.value
-    };
+  const nome = nomeInput.value.trim();
+  const data = dataInput.value;
+  const hora = horaInput.value;
 
-    agenda.push(novo);
+  // validação
+  if (!nome || !data || !hora) {
+    alert("Preencha tudo!");
+    return;
+  }
 
-    // 🔥 salvar no LocalStorage
-    localStorage.setItem("agendando..", JSON.stringify(agenda));
+  const novo = { nome, data, hora };
 
-    mostraragenda();
+  agenda.push(novo);
+
+  localStorage.setItem("agendando", JSON.stringify(agenda));
+
+  mostrarAgenda();
+
+  enviarWhatsApp(nome, data, hora);
+
 });
 
+
+// ================================
+// 🔥 MOSTRAR AO ABRIR
+// ================================
+
+mostrarAgenda();
 
 
 
