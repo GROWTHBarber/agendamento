@@ -10,6 +10,28 @@ let lista = document.getElementById("lista");
 
 let podeagendar = false
 
+function enviarWhats() {
+
+  let nome = document.getElementById("nome").value;
+  let data = document.getElementById("data").value;
+  let hora = document.getElementById("hora").value;
+  
+   if (!nome.value || !data.value || !hora.value) {
+        window.alert("Preencha tudo!");
+        return; // para a função aqui
+    }
+
+  let mensagem =
+    `Olá, meu nome é ${nome}%0A` +
+    `Quero agendar:%0A` +
+    `Data: ${data}%0A` +
+    `Hora: ${hora}`;
+
+  let numero = "5581993982130";
+
+  window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+}
+
 
 
 

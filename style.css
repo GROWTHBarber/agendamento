@@ -2,12 +2,10 @@ body{
 
     min-height: 80vw;
     
-    background-color: rgb(112, 25, 212);
+    background-color: rgb(125, 8, 235);
 }
 
 .agendamento {
-    
-
     box-shadow:  0px 0px 85px rgb(47, 2, 247) ;
     border-radius: 20px;
     padding: 10px;
@@ -16,17 +14,15 @@ body{
     max-width: 100% ;
     min-width: 50% ;
     max-height: 100%;
-    min-height: 600px;
+    min-height: 1000px;
     
 }
 
 #agendar{ 
-    
-
     box-shadow:  0px 0px 25px rgb(98, 0, 255) ;
     font-style:normal;
     position: absolute;
-    top: 550px;
+    top: 890px;
     left: 10%;
     cursor: pointer;
     color: rgb(0, 0, 0);
@@ -43,6 +39,7 @@ body{
 }
 
 #agendar:hover {
+    border-radius: 18px;
     background-color: rgb(6, 129, 245);
     transform: scale(1.1);
     box-shadow:  10px 10px 35px rgb(4, 196, 255) ;
@@ -70,7 +67,7 @@ body{
     cursor: pointer;
     color: rgb(247, 246, 246);
     background-color: rgb(2, 2, 2);
-    border-radius: 10px;
+    border-radius: 30px;
     max-width: 100% ;
     min-width: 49% ;
     height: 50px;
@@ -86,10 +83,11 @@ body{
 }
 
 #hora{
+    font-size: 30px;
     transition: all 1s ease;
     position: absolute;
     left: 23%;
-    top: 365px;
+    top: 505px;
     cursor: pointer;
     color: rgb(0, 0, 0);
     background-color: rgb(147, 65, 224);
@@ -97,16 +95,64 @@ body{
     box-shadow:  0px 0px 35px rgb(111, 0, 255) ;
    
     border-radius: 50px;
-    font-size: 40px;
+    font-size: 30px;
      max-width: 100% ;
     min-width: 50% ;
     border: 0;
     height: 120px;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
+.datatxt {
+    
+    max-width: 100% ;
+    min-width: 15% ;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+
+
+    font-size: 30px;
+    position: absolute;
+    top: 240px;
+    left: 40%;
+    text-align:center;
+
+    
+    
+    display: block;
+    margin-bottom:8px ;
+    color: rgb(131, 5, 250);
+    font-weight: bold;
+}
+
+.horatxt{
+    max-width: 100% ;
+    min-width: 15% ;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+
+
+    font-size: 30px;
+    position: absolute;
+    top: 460px;
+    left: 40%;
+    text-align:center;
+
+    
+    
+    display: block;
+    margin-bottom:8px ;
+    color: rgb(131, 5, 250);
+    font-weight: bold;
+
+}
+
+
+
 #data:hover {
+    
     background-color: rgb(6, 129, 245);
     transform: scale(1.1);
     box-shadow:  10px 10px 35px rgb(4, 196, 255) ;
@@ -120,7 +166,7 @@ body{
     color: white;
     position: absolute;
     font-size: 30px;
-    top: 180px;
+    top: 280px;
     left: 23%;
     background-color:rgb(147, 65, 224);
     border-radius: 50px;
@@ -158,15 +204,10 @@ body{
     min-width: 50% ;
     text-align: center;
     border-radius: 18px;
-    
 
     color: rgb(168, 166, 166);
     box-shadow:  0px 0px 25px rgb(29, 4, 255) ;
     font-size: 40px;
                 
-                 
-
-
-
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
