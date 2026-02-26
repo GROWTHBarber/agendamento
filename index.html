@@ -13,11 +13,21 @@
   <div class="agendamento">
     <input id="nome" placeholder="DIGITE SEU NOME">
     <label class="datatxt" for="hora">Data</label>
-    <input id="data"  type="date">
+    
     
     <label class="horatxt" for="hora">Horário</label>
-    <input id="hora" type="time">
     
+    <input id="data" type="date">
+    
+
+<select id="hora">
+  <option value="">Escolha o horário</option>
+     <option>18:00</option>
+     <option>19:00</option>
+     <option>20:00</option>
+     <option>21:00</option>
+     
+    </select>
     <button id="agendar" onclick="enviarWhats()">Enviar no WhatsApp</button>
     
     

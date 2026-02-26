@@ -42,7 +42,7 @@ function enviarWhatsApp(nome, data, hora) {
 
   const mensagem =
 `Olá, meu nome é ${nome}
-Quero agendar:
+Quero agendar para o horário:
 Data: ${data}
 Hora: ${hora}`;
 
