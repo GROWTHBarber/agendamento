@@ -1,5 +1,5 @@
 // 🔥 carregar dados salvos
-let agenda = JSON.parse(localStorage.getItem("agende")) || [];
+let agenda = JSON.parse(localStorage.getItem("agendando..")) || [];
 
 let nome = document.getElementById("nome");
 let data = document.getElementById("data");
@@ -46,7 +46,7 @@ btn.addEventListener("click", () => {
     agenda.push(novo);
 
     // 🔥 salvar no LocalStorage
-    localStorage.setItem("agende", JSON.stringify(agenda));
+    localStorage.setItem("agendando..", JSON.stringify(agenda));
 
     mostraragenda();
 });
